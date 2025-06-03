@@ -1,26 +1,48 @@
-import React from 'react';
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section
-      id="curso"
-      className="h-screen flex items-center justify-center bg-gradient-to-br from-[#379299] to-[#a2d5d0] text-white px-4"
-    >
-      <div className="max-w-4xl text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          Workshop Internacional de Micropigmentación
-        </h1>
-        <p className="text-lg md:text-xl mb-8">
-          Aprendé junto a <strong>Flavia Fernández</strong>, embajadora de Menela Brasil 🇧🇷, y obtené tu
-          <strong> certificado internacional 🇧🇷🇺🇸🇦🇷</strong>. 
-        </p>
+    <section id="curso" className="relative w-full overflow-hidden">
+      
+      {/* Imagen de fondo ocupando la pantalla completa */}
+      <div className="relative h-screen w-full">
+        <motion.img
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1 }}
+          src="/images/soyflavia.jpg"
+          alt="Flavia Fernández"
+          className="w-full h-full object-contain"
+        />
+      </div>
 
-        <a
-          href="#contacto"
-          className="inline-block bg-white text-[#379299] px-6 py-3 rounded-full font-semibold text-lg shadow-md hover:bg-[#f0f0f0] transition"
+      {/* Contenido separado debajo de la imagen */}
+      <div className="w-full bg-white py-16 text-center flex flex-col items-center px-6">
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-6xl font-extrabold mb-6 text-[#d4af37]"
         >
-          Reservá tu lugar
-        </a>
+          Certificación Internacional en Micropigmentación con Flavia Fernández
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="text-lg md:text-xl mb-8 font-semibold text-[#222]"
+        >
+          Embajadora oficial de Menela Brasil 🇧🇷 | Avalado por 🇧🇷🇺🇸🇦🇷
+        </motion.p>
+
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="mt-2 px-10 py-3 text-lg font-semibold rounded-full border-2 border-[#d4af37] bg-transparent text-[#d4af37] hover:bg-[#d4af37] hover:text-white transition duration-300 ease-in-out shadow-md"
+        >
+          Reservá tu lugar ahora
+        </motion.button>
       </div>
     </section>
   );

@@ -1,29 +1,68 @@
+import { motion } from "framer-motion";
+
 const AboutFlavia = () => {
   return (
-    <section className="bg-white py-12 px-6 max-w-5xl mx-auto">
-      <div className="flex flex-col md:flex-row items-center gap-8">
-        {/* Foto */}
-        <img
-          src="/images/flavia-portrait.jpg" 
-          alt="Flavia Fernández - Micropigmentadora"
-          className="w-48 h-48 rounded-full object-cover shadow-lg"
-        />
+    <motion.div
+      className="flex flex-col md:flex-row items-center gap-10 px-6 py-16 max-w-7xl mx-auto text-[#1f1f1f]"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
+      {/* Imagen animada */}
+      <motion.img
+        src="/images/soyflavia.jpg"
+        alt="Flavia Fernández - Micropigmentadora"
+        className="w-72 h-72 md:w-80 md:h-80 rounded-xl object-cover shadow-xl hover:shadow-[0_0_20px_#d4af37] transition-all duration-500"
+        whileHover={{ scale: 1.08, rotate: 1 }}
+        transition={{ type: "spring", stiffness: 200 }}
+      />
 
-        {/* Texto */}
-        <div>
-          <h2 className="text-3xl font-semibold mb-4">Conoce a Flavia Fernández</h2>
-          <p className="mb-3 text-gray-700">
-            Flavia Fernández es una micropigmentadora certificada internacionalmente en Brasil, Estados Unidos y Argentina.  
-          </p>
-          <p className="mb-3 text-gray-700">
-            Además, es embajadora oficial de la reconocida marca Menela, líder en henna para cejas desde Brasil.
-          </p>
-          <p className="text-gray-700">
-            Su experiencia y dedicación la posicionan como referente en técnicas avanzadas para el diseño de cejas.
-          </p>
-        </div>
-      </div>
-    </section>
+      {/* Texto animado */}
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.3, duration: 0.8 }}
+        viewport={{ once: true }}
+        className="hover:scale-[1.01] transition-transform duration-300"
+      >
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold mb-4 underline decoration-[#d4af37] underline-offset-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+        >
+          Conocé a Flavia Fernández
+        </motion.h2>
+
+        <motion.p
+          className="mb-4 text-lg"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+        >
+          Flavia Fernández es una reconocida profesional de la belleza con certificaciones internacionales en Brasil, Estados Unidos y Argentina.
+        </motion.p>
+
+        <motion.p
+          className="mb-4 text-lg"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+        >
+          Embajadora oficial de <strong>Menela Brasil</strong>, marca líder en henna para cejas, y participante destacada en eventos nacionales e internacionales del rubro.
+        </motion.p>
+
+        <motion.p
+          className="text-lg"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.0 }}
+        >
+          Su pasión, compromiso con la excelencia y enfoque en la salud de sus clientas la posicionan como referente en Latinoamérica.
+        </motion.p>
+      </motion.div>
+    </motion.div>
   );
 };
 

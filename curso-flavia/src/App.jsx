@@ -1,4 +1,3 @@
-
 import Hero from './components/Hero';
 import AboutFlavia from './components/AboutFlavia';
 import Curriculum from './components/Curriculum';
@@ -9,8 +8,8 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <>
-      
+    <div className="min-h-screen bg-gradient-to-br from-[#fceae8] via-[#f9c5d1] to-[#d4af37]">
+      {/* Fondo degradado rose gold suave → rosa pastel → dorado elegante */}
       <Hero />
       <AboutFlavia />
       <Curriculum />
@@ -18,7 +17,7 @@ function App() {
       <CallToAction />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }
 
