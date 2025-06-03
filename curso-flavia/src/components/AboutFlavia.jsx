@@ -9,14 +9,17 @@ const AboutFlavia = () => {
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
     >
-      {/* Imagen animada */}
-      <motion.img
-        src="/images/soyflavia.jpg"
-        alt="Flavia Fernández - Micropigmentadora"
-        className="w-72 h-72 md:w-80 md:h-80 rounded-xl object-cover shadow-xl hover:shadow-[0_0_20px_#d4af37] transition-all duration-500"
-        whileHover={{ scale: 1.08, rotate: 1 }}
-        transition={{ type: "spring", stiffness: 200 }}
-      />
+      {/* Video animado en lugar de imagen */}
+      <motion.video
+        src="/videos/soyflavia2.mp4"  // Cambia la ruta al archivo correcto
+      className="w-[280px] md:w-[320px] h-[420px] rounded-xl object-cover shadow-xl hover:shadow-[0_0_20px_#d4af37] transition-all duration-500"
+  autoPlay
+  loop
+  muted
+  playsInline
+  whileHover={{ scale: 1.03 }}
+  transition={{ type: "spring", stiffness: 200 }}
+/>
 
       {/* Texto animado */}
       <motion.div
