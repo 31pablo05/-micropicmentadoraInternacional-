@@ -30,10 +30,10 @@ const Curriculum = () => {
       }}
     >
       {/* Overlay oscuro para contraste */}
-      <div className="absolute inset-0 bg-black opacity-60"></div>
+      <div className="absolute inset-0 bg-black opacity-40"></div>
 
       <h2 className="relative text-3xl font-bold mb-12 text-center drop-shadow-lg">
-        Curriculum del Curso
+         Curso
       </h2>
 
       {/* Módulo 1 */}

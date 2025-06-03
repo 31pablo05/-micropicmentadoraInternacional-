@@ -1,41 +1,52 @@
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const Intro = () => {
-  // Para animar texto letra por letra (opcional)
   const [showText, setShowText] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowText(true), 300);
+    const timer = setTimeout(() => setShowText(true), 500);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <section className="bg-gradient-to-br from-pink-50 via-white to-pink-100 py-20 px-6 max-w-4xl mx-auto rounded-xl shadow-2xl relative overflow-hidden">
-      {/* Logo MyBeautyStudy */}
-      <img
-        src="/images/LOGO ROSEGOLD.png"
-        alt="MyBeautyStudy Logo"
-        className="mx-auto mb-8 w-40 animate-bounce"
-      />
+    <section
+      className="relative w-full h-screen flex items-center justify-center px-4 py-24 md:px-8 bg-no-repeat bg-cover bg-top"
+      style={{ backgroundImage: "url('/images/meli.jpeg')" }}
+    >
+      {/* Capa oscura con blur para contraste */}
+      <div className="absolute inset-0 bg-black bg-opacity-40  z-0"></div>
 
-      <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-pink-600 drop-shadow-[0_2px_10px_rgba(212,175,55,0.8)] animate-fadeInUp">
-        Bienvenidos a <span className="text-[#d4af37]">MyBeautyStudy</span>
-      </h2>
+      {/* Contenido principal */}
+      <div className="relative z-10 text-center max-w-3xl space-y-6">
+        <motion.h2
+          className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-pink-500"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+        >
+          Bienvenidos a <span className="text-[#d4af37]">MyBeautyStudy</span>
+        </motion.h2>
 
-      <p
-        className={`text-lg md:text-xl mb-8 text-pink-700 max-w-xl mx-auto leading-relaxed ${
-          showText ? "animate-typewriter" : "opacity-0"
-        }`}
-        style={{ animationFillMode: "forwards" }}
-      >
-        MyBeautyStudy es un espacio de formación y estética de la mano de{" "}
-        <strong className="text-[#d4af37]">Melina Yancan</strong>, fundadora y profesional dedicada a traer a los mejores expertos para tu crecimiento.
-      </p>
+        <motion.p
+          className="text-base sm:text-lg md:text-xl text-white font-medium leading-relaxed"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: showText ? 1 : 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+        >
+          ¡Hola! Soy <strong className="text-[#d4af37]">Melina Yancan</strong>, y te doy la bienvenida a <strong className="text-[#d4af37]">MyBeautyStudy</strong>, un espacio creado con amor para formar, inspirar y elevar la estética a su máximo nivel.
+        </motion.p>
 
-      <p className="text-lg md:text-xl text-pink-800 max-w-xl mx-auto leading-relaxed animate-fadeInUp" style={{ animationDelay: "1s" }}>
-        En esta oportunidad, tenemos el honor de presentar a{" "}
-        <strong className="text-[#d4af37]">Flavia Fernández</strong>, micropigmentadora internacional certificada que forma parte de nuestra familia profesional.
-      </p>
+        <motion.p
+          className="text-base sm:text-lg md:text-xl text-white font-medium leading-relaxed"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: showText ? 1 : 0 }}
+          transition={{ delay: 0.9, duration: 0.8 }}
+        >
+          Hoy tengo el honor de presentarles a una profesional increíble: <strong className="text-[#d4af37]">Flavia Fernández</strong>, referente internacional en micropigmentación y embajadora oficial de Menela Brasil. 
+          Te invito a conocerla y a vivir una experiencia única de formación junto a nosotras.
+        </motion.p>
+      </div>
     </section>
   );
 };
