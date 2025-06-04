@@ -35,7 +35,7 @@ const AboutFlavia = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          Conocé a Flavia Fernández
+          Conocé a Flavia Fernándes
         </motion.h2>
 
         <motion.p
@@ -44,7 +44,7 @@ const AboutFlavia = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          Flavia Fernández es una reconocida profesional de la belleza con certificaciones internacionales en Brasil, Estados Unidos y Argentina.
+          Flavia Fernándes es una reconocida profesional de la belleza con certificaciones internacionales en Brasil, Estados Unidos y Argentina.
         </motion.p>
 
         <motion.p

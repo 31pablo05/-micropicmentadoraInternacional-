@@ -43,7 +43,7 @@ const Intro = () => {
           animate={{ opacity: showText ? 1 : 0 }}
           transition={{ delay: 0.9, duration: 0.8 }}
         >
-          Hoy tengo el honor de presentarles a una profesional increíble: <strong className="text-[#d4af37]">Flavia Fernández</strong>, referente internacional en micropigmentación y embajadora oficial de Menela Brasil. 
+          Hoy tengo el honor de presentarles a una profesional increíble: <strong className="text-[#d4af37]">Flavia Fernándes</strong>, referente internacional en micropigmentación y embajadora oficial de Menela Brasil. 
           Te invito a conocerla y a vivir una experiencia única de formación junto a nosotras.
         </motion.p>
       </div>
