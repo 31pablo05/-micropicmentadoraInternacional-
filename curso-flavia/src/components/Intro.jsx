@@ -15,10 +15,10 @@ const Intro = () => {
       style={{ backgroundImage: "url('/images/meli.jpeg')" }}
     >
       {/* Capa oscura con blur para contraste */}
-      <div className="absolute inset-0 bg-black bg-opacity-40  z-0"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
 
       {/* Contenido principal */}
-      <div className="relative z-10 text-center max-w-3xl space-y-6">
+      <div className="relative z-10 max-w-3xl space-y-6 text-left">
         <motion.h2
           className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-pink-500"
           initial={{ opacity: 0, y: 20 }}
